@@ -1,7 +1,5 @@
 package ru.vsu.cs.lazutkina;
 
-import com.sun.jdi.PrimitiveValue;
-
 import java.util.Scanner;
 
 public class Main
