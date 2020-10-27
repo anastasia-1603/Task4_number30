@@ -77,7 +77,7 @@ public class Main
         }
         else if (num == 0)
         {
-            System.exit(0);
+            return;
         }
         else
         {
