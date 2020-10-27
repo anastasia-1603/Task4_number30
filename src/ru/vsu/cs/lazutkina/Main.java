@@ -1,21 +1,23 @@
 package ru.vsu.cs.lazutkina;
 
+import com.sun.jdi.PrimitiveValue;
+
 import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        readNumberAndPrintResult();
-        System.out.print("Enter 1 if you want to enter a new number or 0 if you want to end the program: ");
-        restartProgram(readPositiveNumber());
+        startProgram();
     }
 
-    private static void readNumberAndPrintResult()
+    private static void startProgram()
     {
         System.out.print("Enter a positive number: ");
         int number = readPositiveNumber();
         printResult(number, sumPrimeNumbers(number));
+        System.out.print("Enter 1 if you want to enter a new number or 0 if you want to end the program: ");
+        restartProgram(readPositiveNumber());
     }
 
     private static int readPositiveNumber()
@@ -73,9 +75,7 @@ public class Main
     {
         if (num == 1)
         {
-            readNumberAndPrintResult();
-            System.out.print("Enter 1 or 0: ");
-            restartProgram(readPositiveNumber());
+            startProgram();
         }
         else if (num == 0)
         {
