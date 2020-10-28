@@ -11,11 +11,17 @@ public class Main
 
     private static void startProgram()
     {
-        System.out.print("Enter a positive number: ");
+        System.out.print("Enter the number of the first prime numbers: ");
         int number = readPositiveNumber();
         printResult(number, sumPrimeNumbers(number));
-        System.out.print("Enter 1 if you want to enter a new number or 0 if you want to end the program: ");
-        restartProgram(readPositiveNumber());
+        System.out.print("Restart? (enter yes/no) ");
+        restartProgram(readAnswer());
+    }
+
+    private static String readAnswer()
+    {
+        Scanner scn = new Scanner(System.in);
+        return scn.next();
     }
 
     private static int readPositiveNumber()
@@ -66,23 +72,23 @@ public class Main
 
     private static void reportError()
     {
-        System.out.print("You entered the wrong number. Try again: ");
+        System.out.print("Error. Try again: ");
     }
 
-    private static void restartProgram(int num)
+    private static void restartProgram(String answer)
     {
-        if (num == 1)
+        if (answer.equalsIgnoreCase("yes"))
         {
             startProgram();
         }
-        else if (num == 0)
+        else if (answer.equalsIgnoreCase("no"))
         {
             return;
         }
         else
         {
             reportError();
-            restartProgram(readPositiveNumber());
+            restartProgram(readAnswer());
         }
     }
 }
