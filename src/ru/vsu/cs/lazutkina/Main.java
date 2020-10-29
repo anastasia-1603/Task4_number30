@@ -14,7 +14,7 @@ public class Main
         System.out.print("Enter the number of the first prime numbers: ");
         int number = readPositiveNumber();
         printResult(number, sumPrimeNumbers(number));
-        System.out.print("Restart? (enter yes/no) ");
+        System.out.print("Restart? [enter yes/no] ");
         restartProgram(readAnswer());
     }
 
