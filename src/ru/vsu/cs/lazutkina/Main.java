@@ -30,7 +30,7 @@ public class Main
         int number = scn.nextInt();
         if (number < 0)
         {
-            reportError();
+            reportError("You entered a negative number");
             return readPositiveNumber();
         }
         return number;
@@ -70,9 +70,9 @@ public class Main
         System.out.printf("Sum of the first %d primes = %d\n", number, sum);
     }
 
-    private static void reportError()
+    private static void reportError(String errorType)
     {
-        System.out.print("Error. Try again: ");
+        System.out.printf("%s. Try again: ", errorType);
     }
 
     private static void restartProgram(String answer)
@@ -87,7 +87,7 @@ public class Main
         }
         else
         {
-            reportError();
+            reportError("You did not enter an answer [yes/no]");
             restartProgram(readAnswer());
         }
     }
